@@ -257,7 +257,7 @@ export default function Home() {
             </a>
           </div>
           <p className="text-white/30 text-sm">
-            © 2024 Filip Dimic. Crafted with Next.js & Framer Motion.
+            © {new Date().getFullYear()} Filip Dimic. Crafted with Next.js & Framer Motion.
           </p>
         </footer>
         </div>

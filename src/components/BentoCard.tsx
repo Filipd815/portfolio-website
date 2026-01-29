@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { cardVariants, hoverVariants } from "@/lib/animations";
 import type { Project } from "@/lib/projects";
 
@@ -30,18 +31,13 @@ export function BentoCard({ project }: BentoCardProps) {
       <Link href={`/projects/${project.slug}`} className="block h-full">
         <motion.div
           variants={hoverVariants}
-          className={`
-            relative h-full min-h-[180px] md:min-h-[200px] overflow-hidden rounded-2xl
-            bg-gradient-to-br ${project.color}
-            p-6 flex flex-col justify-between
-            border border-white/10
-            shadow-lg shadow-black/20
-            cursor-pointer
-            group
-          `}
+          className="relative h-full min-h-[180px] md:min-h-[200px] overflow-hidden rounded-2xl p-6 flex flex-col justify-between border border-white/10 shadow-lg shadow-black/20 cursor-pointer group"
+          style={{
+            background: `linear-gradient(to bottom right, ${project.color.from}, ${project.color.to})`,
+          }}
         >
           {/* Gradient overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
           {/* Shine effect on hover */}
           <motion.div
@@ -51,9 +47,21 @@ export function BentoCard({ project }: BentoCardProps) {
 
           {/* Content */}
           <div className="relative z-10">
-            <span className="text-3xl md:text-4xl mb-3 block drop-shadow-lg">
-              {project.icon}
-            </span>
+            {project.image ? (
+              <div className="relative w-full h-24 md:h-32 mb-3 rounded-lg overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t" />
+              </div>
+            ) : project.icon ? (
+              <span className="text-3xl md:text-4xl mb-3 block drop-shadow-lg">
+                {project.icon}
+              </span>
+            ) : null}
             <h3 className={`font-bold text-white mb-2 ${isLarge ? "text-2xl md:text-3xl" : "text-lg md:text-xl"}`}>
               {project.title}
             </h3>

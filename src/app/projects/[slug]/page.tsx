@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { getProject, projects } from "@/lib/projects";
 import { slideUpVariants, containerVariants, cardVariants } from "@/lib/animations";
@@ -46,7 +47,12 @@ export default function ProjectPage() {
       {/* Background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-[#0a0a0f]" />
-        <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-5`} />
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            background: `linear-gradient(to bottom right, ${project.color.from}, ${project.color.to})`,
+          }}
+        />
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[120px]" />
       </div>
 
@@ -77,14 +83,34 @@ export default function ProjectPage() {
         >
           <ParallaxCard className="mb-8">
             <div
-              className={`relative h-64 md:h-80 rounded-3xl bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden`}
+              className="relative rounded-3xl flex items-center justify-center overflow-hidden"
+              style={{
+                background: `linear-gradient(to bottom right, ${project.color.from}, ${project.color.to})`,
+              }}
             >
-              <span className="text-8xl md:text-9xl drop-shadow-2xl">{project.icon}</span>
+              {project.bannerImage ? (
+                <div className="relative w-full">
+                  <Image
+                    src={project.bannerImage}
+                    alt={`${project.title} - Banner`}
+                    width={1200}
+                    height={600}
+                    className="object-contain w-full h-auto"
+                    priority
+                  />
+                  {/* Overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                </div>
+              ) : project.icon ? (
+                <div className="py-16 md:py-20">
+                  <span className="text-8xl md:text-9xl drop-shadow-2xl">{project.icon}</span>
+                </div>
+              ) : null}
               
               {/* Decorative elements */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/20 rounded-full blur-2xl" />
+              <div className="absolute inset-0 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/20 rounded-full blur-2xl pointer-events-none" />
             </div>
           </ParallaxCard>
 
@@ -92,7 +118,13 @@ export default function ProjectPage() {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className={`px-3 py-1 text-sm font-medium bg-gradient-to-r ${project.color} bg-clip-text text-transparent border border-white/20 rounded-full`}
+                className="px-3 py-1 text-sm font-medium border border-white/20 rounded-full"
+                style={{
+                  background: `linear-gradient(to right, ${project.color.from}, ${project.color.to})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
               >
                 {tag}
               </span>
@@ -117,7 +149,7 @@ export default function ProjectPage() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
               >
-                View Live
+                Visit Website
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -178,10 +210,25 @@ export default function ProjectPage() {
               <motion.div key={p.id} variants={cardVariants}>
                 <Link href={`/projects/${p.slug}`} className="block group">
                   <div
-                    className={`relative h-40 rounded-2xl bg-gradient-to-br ${p.color} p-4 flex flex-col justify-between overflow-hidden transition-transform group-hover:scale-[1.02]`}
+                    className="relative h-40 rounded-2xl p-4 flex flex-col justify-between overflow-hidden transition-transform group-hover:scale-[1.02]"
+                    style={{
+                      background: `linear-gradient(to bottom right, ${p.color.from}, ${p.color.to})`,
+                    }}
                   >
-                    <span className="text-3xl">{p.icon}</span>
-                    <div>
+                    {p.image ? (
+                      <div className="absolute inset-0">
+                        <Image
+                          src={p.image}
+                          alt={p.title}
+                          fill
+                          className="object-contain opacity-80"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      </div>
+                    ) : p.icon ? (
+                      <span className="text-3xl">{p.icon}</span>
+                    ) : null}
+                    <div className="relative z-10">
                       <h3 className="font-bold text-white">{p.title}</h3>
                       <p className="text-white/70 text-sm line-clamp-1">{p.description}</p>
                     </div>

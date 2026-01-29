@@ -49,7 +49,7 @@ export function Hero() {
           </motion.div>
 
           {/* Heading with profile photo */}
-          <motion.div variants={itemVariants} className="flex items-start gap-6 md:gap-8">
+          <motion.div variants={itemVariants} className="flex items-center gap-6 md:gap-8">
             <motion.h1
               className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] flex-1"
             >
@@ -79,13 +79,13 @@ export function Hero() {
           
           {/* Profile photo */}
           <motion.div
-            className="relative shrink-0 mt-2"
+            className="relative shrink-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             {/* Glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full opacity-60 blur-md group-hover:opacity-80 transition-opacity" />
-            <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-white/20">
+            <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/20">
               <Image
                 src="/profile.jpg"
                 alt="Filip Dimic"
