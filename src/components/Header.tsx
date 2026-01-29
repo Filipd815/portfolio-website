@@ -222,9 +222,9 @@ export function Header() {
               className="text-xl md:text-2xl font-bold tracking-tight"
             >
               <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                filipdimic
+                fdimic
               </span>
-              <span className="text-white/60">.dev</span>
+              <span className="text-white/60">.xyz</span>
             </motion.div>
           </Link>
 
