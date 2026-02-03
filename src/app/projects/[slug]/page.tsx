@@ -119,12 +119,6 @@ export default function ProjectPage() {
               <span
                 key={tag}
                 className="px-3 py-1 text-sm font-medium border border-white/20 rounded-full"
-                style={{
-                  background: `linear-gradient(to right, ${project.color.from}, ${project.color.to})`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
               >
                 {tag}
               </span>

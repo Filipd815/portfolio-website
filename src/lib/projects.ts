@@ -38,46 +38,60 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    slug: "bmw-e39-registry",
-    title: "BMW E39 Registry",
-    description: "A showcase gallery for classic BMW E39 5-Series vehicles (1995-2003).",
-    tags: ["Next.js 14 (App Router)", "TypeScript (strict mode)", "CSS Modules with custom properties", "SQLite with Prisma ORM", "Zod schema validation", "ESLint + Prettier"],
+    slug: "pwrco",
+    title: "PWRCO",
+    description: "This website is a digital presence for PWRCO",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS"],
     color: {
-      from: "#8b5cf6", // violet-500
-      to: "#9333ea", // purple-600
+      from: "#141e30", 
+      to: "#243b55",
     },  
-    size: "medium", 
-    icon: "🚗",
-    github: "https://github.com/filipd815/bmw-e39-registry",
+    size: "wide", 
+    image: "/prwco/pwrco-branding.svg",
+    bannerImage: "/prwco/pwrco-branding-banner.png",
+    github: "https://github.com/Filipd815/pwrco",
+    link: "https://pwrco-git-main-filipd815-6004s-projects.vercel.app/",
     content: [
-      "The E39 Registry is a full-stack web application dedicated to showcasing and cataloging classic BMW E39 5-Series vehicles (1995-2003). This project demonstrates modern web development practices while celebrating one of BMW's most iconic sports sedans."
+      "This website is a digital presence for PWRCO, a company based in North York, Ontario, specializing in premier electrical and solar services. The specific URL appears to be a development or staging deployment (hosted on Vercel), potentially representing a portfolio project or a site currently under construction."
     ],
   },
   {
     id: "3",
-    slug: "ai-art-generator",
-    title: "AI Art Generator",
-    description: "Generate unique artwork using stable diffusion models.",
-    tags: ["Python", "PyTorch", "React"],
+    slug: "advivus",
+    title: "Advivus",
+    description: "This website is a digital presence for Advivus",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS"],
     color: {
-      from: "#ec4899", // pink-500
-      to: "#e11d48", // rose-600
-    },
-    size: "small",
-    icon: "🎨",
+      from: "#000000", 
+      to: "#000000",
+    },  
+    size: "wide", 
+    image: "/advivus/advivus-branding.png",
+    bannerImage: "/advivus/advivus-branding-banner.png",
+    github: "https://github.com/Filipd815/advivus",
+    link: "https://advivus-git-main-filipd815-6004s-projects.vercel.app/",
+    content: [
+      "This website is a digital presence for Advivus, a company based in North York, Ontario, specializing in premier electrical and solar services. The specific URL appears to be a development or staging deployment (hosted on Vercel), potentially representing a portfolio project or a site currently under construction."
+    ],
   },
   {
     id: "4",
-    slug: "music-visualizer",
-    title: "Music Visualizer",
-    description: "Audio-reactive visual experiences synced to your music.",
-    tags: ["WebGL", "Web Audio API"],
+    slug: "rabbitx",
+    title: "RabbitX",
+    description: "This website is a digital presence for RabbitX",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS", "AOS", "LottieFiles"],
     color: {
-      from: "#06b6d4", // cyan-500
-      to: "#2563eb", // blue-600
+      from: "#6027f0", // cyan-500
+      to: "#8cfe56", // blue-600
     },
     size: "wide",
-    icon: "🎵",
+    image: "/rabbitx/rabbitx-branding.png",
+    bannerImage: "/rabbitx/rabbitx-branding-banner.png",
+    github: "https://github.com/Filipd815/rabbitx",
+    link: "https://rabbitx-git-main-filipd815-6004s-projects.vercel.app/",
+    content: [
+      "RabbitX is a global, permissionless perpetual futures exchange built on Starknet (a Layer 2 scaling solution for Ethereum). It allows users to trade crypto derivatives with the speed and efficiency of a centralized exchange (low latency, milliseconds execution) while maintaining the security and self-custody of a decentralized platform. Key features include zero gas fees for trading, an orderbook model, and up to 50x leverage."
+    ],
   },
   {
     id: "5",
@@ -89,7 +103,7 @@ export const projects: Project[] = [
       from: "#10b981", // emerald-500
       to: "#0d9488", // teal-600
     },
-    size: "small",
+    size: "tall",
     icon: "🏠",
   },
   {

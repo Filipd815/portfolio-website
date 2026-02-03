@@ -31,7 +31,7 @@ export function BentoCard({ project }: BentoCardProps) {
       <Link href={`/projects/${project.slug}`} className="block h-full">
         <motion.div
           variants={hoverVariants}
-          className="relative h-full min-h-[180px] md:min-h-[200px] overflow-hidden rounded-2xl p-6 flex flex-col justify-between border border-white/10 shadow-lg shadow-black/20 cursor-pointer group"
+          className="relative h-full min-h-[180px] md:min-h-[200px] overflow-hidden rounded-2xl p-6 flex flex-col justify-between shadow-lg shadow-black/20 cursor-pointer group"
           style={{
             background: `linear-gradient(to bottom right, ${project.color.from}, ${project.color.to})`,
           }}
@@ -46,14 +46,15 @@ export function BentoCard({ project }: BentoCardProps) {
           />
 
           {/* Content */}
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col h-full">
             {project.image ? (
-              <div className="relative w-full h-24 md:h-32 mb-3 rounded-lg overflow-hidden">
+              <div className="relative w-full mb-3 rounded-lg overflow-hidden grow flex">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-contain"
+                  width={220}
+                  height={220}
+                  className="object-contain max-w-[220px] w-full mx-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t" />
               </div>
