@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: "1",
     slug: "gallop-branding",
     title: "Gallop Branding",
-    description: "Gallop Branding is a branding agency website built with HTML, CSS, and JavaScript.",
+    description: "Gallop Branding is a branding agency website.",
     tags: ["HTML", "CSS", "JavaScript", "SCSS"],
     color: {
       from: "#e3e3e3", // gray-500
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     github: "https://github.com/Filipd815/pwrco",
     link: "https://pwrco-git-main-filipd815-6004s-projects.vercel.app/",
     content: [
-      "This website is a digital presence for PWRCO, a company based in North York, Ontario, specializing in premier electrical and solar services. The specific URL appears to be a development or staging deployment (hosted on Vercel), potentially representing a portfolio project or a site currently under construction."
+      "This website is a digital presence for PWRCO, a company based in North York, Ontario, specializing in premier electrical and solar services. The specific URL is a development deployment (hosted on Vercel), representing a portfolio project or a site currently under construction."
     ],
   },
   {
@@ -95,56 +95,58 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "smart-home-hub",
-    title: "Smart Home Hub",
-    description: "Centralized IoT device management with automation.",
-    tags: ["IoT", "Node.js", "MQTT"],
+    slug: "iape",
+    title: "IApe",
+    description: "This website is a digital presence for IApe",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS", "AOS", "LottieFiles"],
     color: {
-      from: "#10b981", // emerald-500
-      to: "#0d9488", // teal-600
+      from: "#3140FC", // cyan-500
+      to: "#091394", // blue-600
     },
-    size: "tall",
-    icon: "🏠",
+    size: "small",
+    image: "/iape/iape-branding.png",
+    bannerImage: "/iape/iape-branding-banner.png",
+    github: "https://github.com/Filipd815/iape",
+    link: "https://iape-git-main-filipd815-6004s-projects.vercel.app/",
+    content: [
+      "IApe is a global, permissionless perpetual futures exchange built on Starknet (a Layer 2 scaling solution for Ethereum). It allows users to trade crypto derivatives with the speed and efficiency of a centralized exchange (low latency, milliseconds execution) while maintaining the security and self-custody of a decentralized platform. Key features include zero gas fees for trading, an orderbook model, and up to 50x leverage."
+    ],
   },
   {
     id: "6",
-    slug: "code-editor",
-    title: "Cloud Code Editor",
-    description: "Browser-based IDE with collaborative editing and AI assistance.",
-    tags: ["Monaco", "WebRTC", "TypeScript"],
+    slug: "flowapp",
+    title: "FlowApp",
+    description: "This website is a digital presence for FlowApp",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS", "Canvas"],
     color: {
-      from: "#6366f1", // indigo-500
-      to: "#7c3aed", // violet-600
-    },
-    size: "tall",
-    icon: "💻",
-  },
-  {
-    id: "7",
-    slug: "fitness-tracker",
-    title: "Fitness Tracker",
-    description: "Track workouts, nutrition, and progress with beautiful charts.",
-    tags: ["React Native", "HealthKit"],
-    color: {
-      from: "#84cc16", // lime-500
-      to: "#16a34a", // green-600
-    },
-    size: "medium",
-    icon: "💪",
-  },
-  {
-    id: "8",
-    slug: "weather-app",
-    title: "Weather Experience",
-    description: "Immersive weather app with dynamic backgrounds.",
-    tags: ["React", "OpenWeather API"],
-    color: {
-      from: "#0ea5e9", // sky-500
-      to: "#4f46e5", // indigo-600
+      from: "#0f2027", // cyan-500
+      to: "#2c5364", // blue-600
     },
     size: "small",
-    icon: "🌤️",
-  },
+    image: "/flowapp/flowapp-branding.png",
+    bannerImage: "/flowapp/flowapp-branding-banner.png",
+    link: "https://flowapp.techflowventures.com/",
+    content: [
+      "Flow – Personal Financial Advisor Application A comprehensive fintech platform designed to simplify personal finance management. The application syncs with user cash flow to generate actionable financial objectives, featuring educational modules and Plaid API integration for secure, real-time data tracking."
+    ]
+  },{
+    id: "7",
+    slug: "tanko",
+    title: "Tanko Barbershop",
+    description: "Tanko Barbershop - A sleek, responsive website",
+    tags: ["HTML", "CSS", "JavaScript", "SCSS"],
+    color: {
+      from: "#000000", // cyan-500
+      to: "#f8bf00", // blue-600
+    },
+    size: "small",
+    image: "/tanko/tanko-branding.png",
+    bannerImage: "/tanko/tanko-branding-banner.png",
+    link: "https://tanko.rs/",
+    content: [
+      "Tanko Barbershop – A sleek, responsive website designed for a premium barbershop in downtown Belgrade. The site features a comprehensive service menu, integrated pricing lists, and a clear call-to-action for online bookings. The layout reflects the shop's blend of classic 1920s aesthetics and modern urban style."
+    ]
+  }
 ];
 
 export function getProject(slug: string): Project | undefined {

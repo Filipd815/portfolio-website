@@ -210,12 +210,13 @@ export default function ProjectPage() {
                     }}
                   >
                     {p.image ? (
-                      <div className="absolute inset-0">
+                      <div className=" inset-0">
                         <Image
                           src={p.image}
                           alt={p.title}
-                          fill
-                          className="object-contain opacity-80"
+                          width={120}
+                          height={120}
+                          className="max-w-[120px] w-full mx-auto opacity-80"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       </div>
